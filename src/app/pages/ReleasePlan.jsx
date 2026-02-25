@@ -233,9 +233,7 @@ export const ReleasePlan = () => {
                 <tr key={team.group} className="hover:bg-gray-50">
                   <td className="px-6 py-4 text-sm font-medium text-gray-900">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#C3002F] flex items-center justify-center text-white text-xs font-semibold">
-                        {team.avatar}
-                      </div>
+                      
                       <span>{team.group}</span>
                     </div>
                   </td>

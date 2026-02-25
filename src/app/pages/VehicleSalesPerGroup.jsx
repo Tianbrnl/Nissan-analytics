@@ -147,7 +147,7 @@ export const VehicleSalesPerGroup = () => {
           </button>
           <button
             onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
           >
             <Plus className="w-4 h-4" />
             Add Monthly Data
@@ -163,7 +163,7 @@ export const VehicleSalesPerGroup = () => {
         </div>
         <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
           <p className="text-sm text-gray-600 mb-2">Top Team</p>
-          <h3 className="text-xl font-bold text-blue-600">
+          <h3 className="text-xl font-bold text-[#C3002F]">
             {topTeam?.team || "N/A"}
           </h3>
           <p className="text-sm text-gray-500 mt-1">
@@ -215,9 +215,7 @@ export const VehicleSalesPerGroup = () => {
                   >
                     <td className="sticky left-0 bg-white px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200 z-10">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-semibold">
-                          {team.avatar}
-                        </div>
+                        
                         <div className="flex items-center gap-2">
                           {team.team}
                           {isTopTeam && (

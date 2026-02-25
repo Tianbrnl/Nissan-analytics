@@ -152,13 +152,7 @@ export const VehicleReports = () => {
             >
               <Edit2 className="w-4 h-4 text-gray-600" />
             </button>
-            <button
-              onClick={() => handleAdd("vehicleSales")}
-              className="flex items-center gap-2 px-3 py-1.5 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-[#A00027] transition-colors"
-            >
-              <Plus className="w-4 h-4" />
-              Add
-            </button>
+            
             <button
               onClick={() =>
                 exportVehicleSalesByModel(vehicleSalesByModel, months, models)
@@ -248,13 +242,7 @@ export const VehicleReports = () => {
             >
               <Edit2 className="w-4 h-4 text-gray-600" />
             </button>
-            <button
-              onClick={() => handleAdd("paymentTerm")}
-              className="flex items-center gap-2 px-3 py-1.5 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-[#A00027] transition-colors"
-            >
-              <Plus className="w-4 h-4" />
-              Add
-            </button>
+            
             <button
               onClick={() => exportPaymentTerms(paymentTermData, months)}
               className="flex items-center gap-2 px-3 py-1.5 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-[#A00027] transition-colors"
@@ -380,13 +368,7 @@ export const VehicleReports = () => {
             >
               <Edit2 className="w-4 h-4 text-gray-600" />
             </button>
-            <button
-              onClick={() => handleAdd("reservation")}
-              className="flex items-center gap-2 px-3 py-1.5 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-[#A00027] transition-colors"
-            >
-              <Plus className="w-4 h-4" />
-              Add
-            </button>
+            
             <button
               onClick={() =>
                 exportReservationsByTeam(reservationByTeam, months, teams)
@@ -440,9 +422,7 @@ export const VehicleReports = () => {
                   <tr key={team} className="hover:bg-gray-50">
                     <td className="sticky left-0 z-10 bg-white px-4 md:px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-semibold flex-shrink-0">
-                          {team.split(" – ")[0].replace("NSR", "N")}
-                        </div>
+                        
                         <div className="flex items-center gap-2">
                           <span>{team}</span>
                           {growth !== 0 && (

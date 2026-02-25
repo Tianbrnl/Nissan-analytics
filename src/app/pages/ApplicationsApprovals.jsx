@@ -153,13 +153,7 @@ export const ApplicationsApprovals = () => {
             <Edit className="w-4 h-4" />
             Edit
           </button>
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-[#A00027] transition-colors"
-          >
-            <Plus className="w-4 h-4" />
-            Add Monthly Data
-          </button>
+          
           <button
             onClick={() => alert("Export to Word")}
             className="flex items-center gap-2 px-4 py-2 bg-[#C3002F] text-white rounded-lg text-sm font-medium hover:bg-[#A00027] transition-colors"
@@ -375,9 +369,7 @@ export const ApplicationsApprovals = () => {
                   <tr key={index} className="hover:bg-gray-50">
                     <td className="px-6 py-4 text-sm font-medium text-gray-900">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-semibold">
-                          {team.avatar}
-                        </div>
+                        
                         <div className="flex items-center gap-2">
                           {team.team}
                           {isTopPerformer && (
