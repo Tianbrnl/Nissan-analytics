@@ -11,6 +11,7 @@ export const Pipeline = () => {
       closed: "2026-01-15",
       targetRelease: "2026-02-01",
       variantUnit: "Nissan Patrol",
+      model: "VL 4x4 AT",
       color: "Pearl White",
       csNumber: "CS-2026-001",
       transaction: "Financing",
@@ -26,6 +27,7 @@ export const Pipeline = () => {
       closed: "2026-01-20",
       targetRelease: "2026-02-10",
       variantUnit: "Nissan Kicks",
+      model: "VL 4x4 AT",
       color: "Midnight Black",
       csNumber: "CS-2026-002",
       transaction: "Cash",
@@ -41,6 +43,7 @@ export const Pipeline = () => {
       closed: "2026-02-05",
       targetRelease: "2026-02-20",
       variantUnit: "Nissan Terra",
+      model: "VL 4x4 AT",
       color: "Silver Metallic",
       csNumber: "CS-2026-003",
       transaction: "Bank PO",
@@ -138,6 +141,9 @@ export const Pipeline = () => {
                   Variant Unit
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap">
+                  Model
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap">
                   Color
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap">
@@ -188,6 +194,9 @@ export const Pipeline = () => {
                   </td>
                   <td className="px-4 py-4 text-sm text-gray-900 whitespace-nowrap">
                     {entry.variantUnit}
+                  </td>
+                  <td className="px-4 py-4 text-sm text-gray-900 whitespace-nowrap">
+                    {entry.model}
                   </td>
                   <td className="px-4 py-4 text-sm text-gray-900 whitespace-nowrap">
                     {entry.color}

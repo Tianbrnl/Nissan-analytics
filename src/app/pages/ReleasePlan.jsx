@@ -31,6 +31,7 @@ export const ReleasePlan = () => {
         group: "NSR1 – Mike",
         avatar: "M",
         actual: 25,
+        commitment: 38,
         additionalThisWeek: 5,
         additionalNextWeek: 8,
         target: 40,
@@ -39,6 +40,7 @@ export const ReleasePlan = () => {
         group: "NSR2 – Jhoven",
         avatar: "J",
         actual: 20,
+        commitment: 30,
         additionalThisWeek: 4,
         additionalNextWeek: 6,
         target: 35,
@@ -47,6 +49,7 @@ export const ReleasePlan = () => {
         group: "NSR3 – Jay-R",
         avatar: "JR",
         actual: 18,
+        commitment: 26,
         additionalThisWeek: 3,
         additionalNextWeek: 5,
         target: 30,
@@ -57,6 +60,7 @@ export const ReleasePlan = () => {
         group: "NSR1 – Mike",
         avatar: "M",
         actual: 28,
+        commitment: 43,
         additionalThisWeek: 6,
         additionalNextWeek: 9,
         target: 45,
@@ -65,6 +69,7 @@ export const ReleasePlan = () => {
         group: "NSR2 – Jhoven",
         avatar: "J",
         actual: 22,
+        commitment: 34,
         additionalThisWeek: 5,
         additionalNextWeek: 7,
         target: 38,
@@ -73,6 +78,7 @@ export const ReleasePlan = () => {
         group: "NSR3 – Jay-R",
         avatar: "JR",
         actual: 20,
+        commitment: 30,
         additionalThisWeek: 4,
         additionalNextWeek: 6,
         target: 32,
@@ -83,6 +89,7 @@ export const ReleasePlan = () => {
         group: "NSR1 – Mike",
         avatar: "M",
         actual: 30,
+        commitment: 47,
         additionalThisWeek: 7,
         additionalNextWeek: 10,
         target: 48,
@@ -91,6 +98,7 @@ export const ReleasePlan = () => {
         group: "NSR2 – Jhoven",
         avatar: "J",
         actual: 25,
+        commitment: 39,
         additionalThisWeek: 6,
         additionalNextWeek: 8,
         target: 42,
@@ -99,6 +107,7 @@ export const ReleasePlan = () => {
         group: "NSR3 – Jay-R",
         avatar: "JR",
         actual: 22,
+        commitment: 34,
         additionalThisWeek: 5,
         additionalNextWeek: 7,
         target: 35,
@@ -109,28 +118,22 @@ export const ReleasePlan = () => {
   // Get data for selected month
   const monthData = releasePlanData[selectedMonth] || [];
 
-  // Calculate month-end commitment and variance for each team
+  // Calculate variance for each team based on editable commitment
   const teamsWithCalculations = monthData.map((team) => {
-    const monthEndCommitment =
-      team.actual + team.additionalThisWeek + team.additionalNextWeek;
-    const variance = monthEndCommitment - team.actual; // Variance is Commitment minus Actual
-    return { ...team, monthEndCommitment, variance };
+    const variance = team.commitment - team.actual; // Variance is Commitment minus Actual
+    return { ...team, variance };
   });
 
   // Calculate totals
   const totals = teamsWithCalculations.reduce(
     (acc, team) => ({
       actual: acc.actual + team.actual,
-      additionalThisWeek: acc.additionalThisWeek + team.additionalThisWeek,
-      additionalNextWeek: acc.additionalNextWeek + team.additionalNextWeek,
-      monthEndCommitment: acc.monthEndCommitment + team.monthEndCommitment,
+      commitment: acc.commitment + team.commitment,
       variance: acc.variance + team.variance,
     }),
     {
       actual: 0,
-      additionalThisWeek: 0,
-      additionalNextWeek: 0,
-      monthEndCommitment: 0,
+      commitment: 0,
       variance: 0,
     },
   );

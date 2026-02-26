@@ -73,7 +73,7 @@ export const Dashboard = () => {
   const paymentTermData = [
     { name: "Cash", value: 28, color: "#3B82F6" },
     { name: "Financing", value: 52, color: "#10B981" },
-    { name: "Lease", value: 20, color: "#F59E0B" },
+    { name: "Bank PO", value: 20, color: "#F59E0B" },
   ];
 
   // Reservation by Team
