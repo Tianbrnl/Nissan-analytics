@@ -6,6 +6,7 @@ export default function App() {
   return (
     <DataProvider>
       <RouterProvider router={router} />
+      
     </DataProvider>
   );
 }

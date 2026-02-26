@@ -57,7 +57,7 @@ export const ApplicationsApprovals = () => {
       0,
     ),
   };
-
+   
   const totalApproved =
     matrixTotals.approvedAsApplied + matrixTotals.approvedNotAsApplied;
   const approvalRate =
