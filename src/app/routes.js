@@ -8,7 +8,7 @@ import { ApplicationsApprovals } from "./pages/ApplicationsApprovals";
 import { VehicleSalesPerGroup } from "./pages/VehicleSalesPerGroup";
 import { Pipeline } from "./pages/Pipeline";
 import { ReleasePlan } from "./pages/ReleasePlan";
-
+import { Team } from "./pages/Team"
 export const router = createBrowserRouter([
   {
     path: "/login",
@@ -28,6 +28,7 @@ export const router = createBrowserRouter([
       { path: "vehicle-sales", Component: VehicleSalesPerGroup },
       { path: "pipeline", Component: Pipeline },
       { path: "release-plan", Component: ReleasePlan },
+      {path: "team", Component: Team},
     ],
   },
 ]);

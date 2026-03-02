@@ -12,6 +12,7 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
+  User,
 } from "lucide-react";
 
 export const Layout = () => {
@@ -30,19 +31,7 @@ export const Layout = () => {
   }, [navigate]);
 
   // Auto-collapse sidebar on small laptop screens
-  React.useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1280 && window.innerWidth >= 1024) {
-        setIsExpanded(false);
-      } else if (window.innerWidth >= 1280) {
-        setIsExpanded(true);
-      }
-    };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
@@ -68,6 +57,7 @@ export const Layout = () => {
     },
     { path: "/pipeline", label: "Pipeline", icon: GitBranch },
     { path: "/release-plan", label: "Release Plan", icon: FileDown },
+    {path: "/team", label: "Team", icon: User}
   ];
 
   return (
@@ -87,7 +77,7 @@ export const Layout = () => {
       {/* Mobile Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
@@ -163,7 +153,7 @@ export const Layout = () => {
 
                     {/* Tooltip for collapsed state */}
                     {!isExpanded && (
-                      <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
+                      <div className="   opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
                         {item.label}
                       </div>
                     )}

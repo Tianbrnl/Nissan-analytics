@@ -137,6 +137,11 @@ const initialVehicleSalesData = {
   "Nov 2026": [],
   "Dec 2026": [],
 };
+const initialTeams = [
+  { id: 1, code: "NSR1", leader: "Mike", avatar: "M" },
+  { id: 2, code: "NSR2", leader: "Jhoven", avatar: "J" },
+  { id: 3, code: "NSR3", leader: "Jayr", avatar: "JR" },
+];
 
 const initialApplicationData = {
   "Dec 2025": [
@@ -444,6 +449,14 @@ export const DataProvider = ({ children }) => {
   const [vehicleSalesData, setVehicleSalesData] = useState(
     initialVehicleSalesData,
   );
+    const [teams, setTeams] = useState(initialTeams);
+    const addTeam = (newTeam) => {
+    setTeams(prev => [...prev, newTeam])
+}
+    const deleteTeam = (id) => {
+      setTeams(prev => prev.filter(team => team.id !== id));
+  };
+  
   const [applicationData, setApplicationData] = useState(
     initialApplicationData,
   );
@@ -479,6 +492,10 @@ export const DataProvider = ({ children }) => {
         setPaymentTermData,
         reservationByTeam,
         setReservationByTeam,
+        teams,
+        addTeam,
+        setTeams,
+        deleteTeam,
       }}
     >
       {children}
